@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<title> Coronavirus Live Tracker </title>
+<meta charset="UTF-8">
+<meta name="description" content="A live coronavirus tracker.">
+<meta name="author" content="Ruyi Li">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="caramel.min.css">
+<link rel="stylesheet" href="style.css">
+
+<script type="text/javascript" src="sorttable.js"></script>
+<script type="text/javascript" src="main.js" defer></script>
+
+<div class="row">
+    <h1> 2019-nCoV (Coronavirus) Live Tracker </h1>
+    <div class="box col-6">
+        <div class="panel dark">
+            <div class="panel-head"> General Information </div>
+            <div class="panel-body">
+                <p>
+                    <strong> What is the coronavirus? </strong> <br>
+                    Coronaviruses are a family of viruses that affect mammals and birds. They can cause respiratory
+                    infections in humans, with severities ranging from mild to lethal.
+                    <br> <br>
+
+                    <strong> What are some examples of coronaviruses? </strong> <br>
+                    Notable examples of members of this family include:
+                </p>
+                <ul>
+                    <li> The common cold. Mild symptoms. </li>
+                    <li> Severe Acute Respiratory Syndrome (SARS-CoV). Outbreak in 2003. Potentially lethal. </li>
+                    <li> Middle East Respiratory Syndrome (MERS-CoV). Outbreak in 2012. Potentially lethal. </li>
+                    <li> Novel Coronavirus (2019-nCoV). Ongoing outbreak. Potentially lethal. </li>
+                </ul>
+                <p>
+                    <br>
+                    <strong> What is the Novel Coronavirus? </strong> <br>
+                    The Novel Coronavirus, or more commonly referred to in the media simply as "coronavirus", is a
+                    coronavirus originating in the capital of Hubei in China, Wuhan. It was discovered when a multitude
+                    of citizens started to display symptoms of a disease like pneumonia; however, doctors were unable to
+                    treat it, nor were they able to identify the cause. It is hypothesized to be a zoonotic disease,
+                    having originated from victims consuming animals such as bats.
+                </p>
+            </div>
+        </div>
+        <div class="panel info">
+            <div class="panel-head"> Causes, Symptoms, and Countermeasures </div>
+            <div class="panel-body">
+                <p>
+                    Transmissions have been confirmed to occur between humans via breathing, coughing, or sneezing.
+                    Those who have visited Mainland China recently may be at risk. Elderly people and people with
+                    pre-existing medical conditions are more susceptible to 2019-nCoV.
+                    <br> <br>
+
+                    <strong> What are some symptoms? </strong> <br>
+                    Symptoms will typically start to appear anytime from two days to two weeks after contracting the
+                    virus. Some signs of the virus include:
+                </p>
+                <ul>
+                    <li> Fever </li>
+                    <li> Cough </li>
+                    <li> Shortness of Breath </li>
+                </ul>
+                <p>
+                    <br>
+                    Individuals are advised to wear proper face masks to prevent the spread of the disease. If you
+                    suspect that you may have the virus, contact a medical professional through the telephone,
+                    <strong> not </strong> in person.
+                </p>
+            </div>
+        </div>
+        <div class="alert" id="sources">
+            <h1> Sources </h1>
+            <a href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6">
+                https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6 </a>
+            <a href="https://www.cdc.gov/coronavirus/about/symptoms.html">
+                https://www.cdc.gov/coronavirus/about/symptoms.html </a>
+            <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public">
+                https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public </a>
+            <a href="https://ipac-canada.org/coronavirus-resources.php">
+                https://ipac-canada.org/coronavirus-resources.php </a>
+        </div>
+    </div>
+    <div class="box col-6">
+        <div class="panel dark">
+            <div class="panel-head"> Total Cases By Country/Region </div>
+            <div class="panel-body">
+                <h5 id="last-updated"> Last Updated: </h5>
+                <table id="cumu-table" class="sortable table">
+                    <thead>
+                        <tr>
+                            <th> Country/Region </th>
+                            <th class="sorttable_numeric"> Confirmed Cases </th>
+                            <th class="sorttable_numeric"> Deaths </th>
+                            <th class="sorttable_numeric"> Recovered </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <h1> Reports </h1>
+    <div class="box col-4">
+        <div class="panel error">
+            <div class="panel-head"> Deaths </div>
+            <div class="panel-body">
+                <h5 id="total-deaths"> Total Deaths: </h5>
+                <table id="deaths-table" class="sortable table">
+                    <thead>
+                        <tr>
+                            <th> Province/State </th>
+                            <th> Country/Region </th>
+                            <th class="sorttable_numeric"> Deaths </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="box col-4">
+        <div class="panel warn">
+            <div class="panel-head"> Confirmed Cases </div>
+            <div class="panel-body">
+                <h5 id="total-confirmed"> Total Confirmed Cases: </h5>
+                <table id="confirmed-table" class="sortable table">
+                    <thead>
+                        <tr>
+                            <th> Province/State </th>
+                            <th> Country/Region </th>
+                            <th class="sorttable_numeric"> Confirmed Cases </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="box col-4">
+        <div class="panel success">
+            <div class="panel-head"> Recovered </div>
+            <div class="panel-body">
+                <h5 id="total-recovered"> Total Recovered: </h5>
+                <table id="recovered-table" class="sortable table">
+                    <thead>
+                        <tr>
+                            <th> Province/State </th>
+                            <th> Country/Region </th>
+                            <th class="sorttable_numeric"> Recovered </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

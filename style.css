@@ -1,0 +1,31 @@
+body {
+    padding: 20px 40px;
+    background: #181818;
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: #ededed;
+}
+
+ul {
+    margin: 0;
+}
+
+th {
+    cursor: pointer;
+}
+
+#sources h1 {
+    color: #181818;
+}
+
+#sources a {
+    color: #52B7D6;
+    word-wrap: break-word;
+    display: block;
+}
+
+#sources a:hover {
+    text-decoration: underline;
+}
