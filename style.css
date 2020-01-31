@@ -16,6 +16,14 @@ th {
     cursor: pointer;
 }
 
+.alert h1 {
+    margin: 0;
+}
+
+.alert {
+    padding: 20px;
+}
+
 #sources h1 {
     color: #181818;
 }

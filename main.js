@@ -36,6 +36,8 @@ const attributesOfInterest = [
 fetch(ENDPOINTS.REPORTS_BY_COUNTRY_OR_REGION)
     .then(res => res.json())
     .then(res => {
+        const lastUpdate = res.features[ 0 ].attributes.Last_Update;
+        lastUpdated.innerHTML = `Last Updated: <strong> ${ new Date(lastUpdate) } </strong>`;
         for (const { attributes } of res.features) {
             const row = document.createElement('tr');
             for (const attr of attributesOfInterest) {
@@ -50,9 +52,6 @@ fetch(ENDPOINTS.REPORTS_BY_COUNTRY_OR_REGION)
 fetch(ENDPOINTS.REPORTS)
     .then(res => res.json())
     .then(res => {
-        const lastUpdate = res.features[ 0 ].attributes.Last_Update;
-        lastUpdated.innerHTML = `Last Updated: <strong> ${ lastUpdate } </strong>`;
-
         for (const {
             attributes: {
                 Province_State: prov,
